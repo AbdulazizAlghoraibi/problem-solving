@@ -1,0 +1,35 @@
+// Team Olympiad
+// by abdulaziz alghoribi
+
+#include <bits/stdc++.h>
+
+#define ll long long
+#define endl '\n'
+#define abdulaziz cin.tie(0)->sync_with_stdio(0);
+
+using namespace std;
+
+int main()
+{
+   abdulaziz
+  unsigned short n,s,t,ans;
+  cin>>n;
+  vector <unsigned short> pr,ma,sp;
+
+  for(int i = 0 ; i<n ; i++){
+   cin>>s;
+   if(s==1){pr.push_back(i+1);}
+   else if(s==2){ma.push_back(i+1);}
+   else if(s==3){sp.push_back(i+1);}
+
+
+  }
+
+ ans = min({pr.size(),ma.size(),sp.size()});
+ cout<<ans<<endl;
+ for (int i =0; i<ans ;i++ ){
+   cout<<pr[i]<<' '<<ma[i]<<' '<< sp[i] <<endl;
+
+ }
+    return 0;
+}
