@@ -1,15 +1,17 @@
 //Ada and Queue 
 // by abdulaziz alghoribi 
+
 #include <bits/stdc++.h>
 
 using namespace std;
 #define abdulaziz ios::sync_with_stdio(false);cin.tie(NULL);cout.tie(NULL);
+
 int main()
 {
 
     abdulaziz
     int q, f=1;
-    int n;
+    unsigned short n;
     string s;
 
     deque <int> dq;
