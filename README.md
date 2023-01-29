@@ -67,7 +67,7 @@ int main()
 
         //push back
         else if (s == "push_back") 
-        {
+        { 
           cin >> n;
           if(f%2 != 0)
             dq.push_back(n);
