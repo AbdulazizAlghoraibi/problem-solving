@@ -1,0 +1,31 @@
+//Potions (Hard Version) 
+//by abdulaziz alghoribi
+
+#include <bits/stdc++.h>
+#define ll long long
+#define abdulaziz ios::sync_with_stdio(false);cin.tie(NULL);cout.tie(NULL);
+#define endl '\n'
+using namespace std;
+
+int main()
+{
+    abdulaziz
+    int n=0,ans=0,x=0;
+    ll h=0;
+    priority_queue<int,vector<int>,greater<int>> pq;
+    cin>>n;
+    for(int i = 0 ; i < n ; ++i){
+    cin>>x;
+    pq.push(x);
+    ans++;
+    h+=x;
+      while(h < 0) {
+        h-=pq.top();
+        pq.pop();
+        ans--;
+      }
+    }
+
+cout<<ans<<endl;
+    return 0;
+}
