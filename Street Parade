@@ -1,0 +1,61 @@
+//--------------------------------------------------------------------
+// by Abdulaziz Alghoribi  
+// Street Parade 
+//--------------------------------------------------------------------
+
+    #include <bits/stdc++.h>
+    using namespace std;
+    #define ll long long
+    #define endl '\n'
+    #define mod 1000000007
+    #define mod 1686876991
+    #define abdulaziz cin.tie(0)->sync_with_stdio(0);
+
+    int main()
+    {
+        abdulaziz
+        int n;
+
+
+        while(1){
+
+            cin>>n;
+            if (n==0)break;
+                int stat=1;
+                int f=1;
+                queue <int> q;
+                stack <int> stk;
+            for(int i=0; i < n ; ++i){
+             int x;
+             cin>>x;
+             q.push(x);
+            }
+            while(q.size()){
+              if(stk.size()&& q.front() > stk.top())
+              {
+                 f =0;
+                 break;
+              }
+              else if(q.front()!= stat){
+                stk.push(q.front());
+                q.pop();
+              }
+              else{
+                q.pop();
+                stat++;
+                while(stk.size() && stk.top() == stat){
+                stk.pop();
+                stat++;
+                }
+              }
+
+            }
+        if(f == 0 || stk.size()){
+                    cout<<"no"<<endl;
+             }
+                else{
+                    cout<<"yes"<<endl;
+                }
+        }
+        return 0;
+    }
