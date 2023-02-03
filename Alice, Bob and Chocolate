@@ -1,0 +1,41 @@
+//--------------------------------------------------------------------
+// by Abdulaziz Alghoribi  
+// Street Parade 
+//--------------------------------------------------------------------
+
+  #include <bits/stdc++.h>
+    using namespace std;
+
+#define ll long long
+#define endl '\n'
+#define abdulaziz cin.tie(0)->sync_with_stdio(0);
+
+
+using namespace std;
+
+int main()
+{
+    abdulaziz
+int n;
+cin>>n;
+vector <int> v (n);
+for(int i =0; i<n ; i++){
+    cin>>v[i];
+}
+int Acounter = 0 , Bcounter = 0 ;
+int A = 0 , B= n-1;
+int Asum =v[A], Bsum =v[B];
+while(A <= B){
+
+   if (Asum <= Bsum){
+    Asum += v[++A];
+    Acounter++;
+   }else{
+   Bsum += v[--B];
+   Bcounter++;
+   }
+}
+cout<<Acounter<<' '<<Bcounter<< endl;
+
+    return 0;
+}
