@@ -1,0 +1,42 @@
+//--------------------------------------------------------------------
+// by Abdulaziz Alghoribi
+// Pangram 
+//--------------------------------------------------------------------
+
+
+#include <bits/stdc++.h>
+using namespace std;
+
+#define ll long long
+#define endl '\n'
+#define abdulaziz cin.tie(0)->sync_with_stdio(0);
+
+
+int main()
+{
+    abdulaziz
+   int n;
+   string s;
+   cin>>n>>s;
+   int freq[26]={0};
+   for(int i = 0 ; i < s.size() ; ++i)
+   {
+       s[i]= tolower(s[i]);
+       freq[s[i]-'a']++;
+   }
+   bool flag = 1;
+   for(int i = 0 ; i <= 25 ; ++i)
+    {
+
+    if(freq[i]==0){
+        cout<<"NO"<<endl;
+        flag=0;
+        break;
+       }
+
+    }
+
+ if(flag==1) cout<<"YES"<<endl;
+
+    return 0;
+}
