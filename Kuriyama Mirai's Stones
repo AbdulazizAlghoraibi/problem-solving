@@ -1,0 +1,46 @@
+//--------------------------------------------------------------------
+// by Abdulaziz Alghoribi  
+// Kuriyama Mirai's Stones 
+//--------------------------------------------------------------------
+
+#include <bits/stdc++.h>
+using namespace std;
+
+#define ll long long
+#define endl '\n'
+#define abdulaziz cin.tie(0)->sync_with_stdio(0);
+
+int main()
+{
+    abdulaziz
+   int n;
+   cin>>n;
+   vector<int> v(n+1),u(n+1 );
+   for(int i=1; i<=n ;++i){
+    cin>>v[i];
+   }
+   u = v;
+   sort(u.begin(),u.end());
+
+vector<long long> prfx_v(n+1),prfx_u(n+1);
+prfx_v[0]={0};
+prfx_u[0]={0};
+
+   for(int i=1;i<=n;++i){
+    prfx_v[i]=prfx_v[i-1]+v[i];
+    prfx_u[i]=prfx_u[i-1]+u[i];
+   }
+int q;
+cin>>q;
+for(int i=0; i<q; ++i){
+   int op,l,r;
+   cin>>op>>l>>r;
+   if(op==1){
+   cout<<prfx_v[r]-prfx_v[l-1]<<endl;
+    }else{
+    cout<<prfx_u[r]-prfx_u[l-1]<<endl;
+    }
+
+ }
+    return 0;
+}
