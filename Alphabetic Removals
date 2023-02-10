@@ -1,0 +1,51 @@
+//--------------------------------------------------------------------
+// by Abdulaziz Alghoribi
+// Alphabetic Removals 
+// at codeforces.com (999c)
+//--------------------------------------------------------------------
+
+#include <bits/stdc++.h>
+using namespace std;
+
+#define ll long long
+#define endl '\n'
+#define abdulaziz cin.tie(0)->sync_with_stdio(0);
+
+
+int main()
+{
+    int n,k;
+   string s;
+   cin>>n>>k>>s;
+   vector <int> arr[26];
+
+   // get the index of the string elements
+
+   for (int i=0 ; i < s.size() ; ++i){
+    arr[s[i]-'a'].push_back(i);
+   }
+
+   // to check every vector in the array
+   for(int i=0 ;i < 26 ; ++i){
+     for(int j=0 ;j < arr[i].size() ; ++j){
+         if(k > 0){
+             k--;
+             s[arr[i][j]] = '#';
+         }
+        // to have fast processing and save time
+        if (k == 0) break;
+     }
+       // to have fast processing and save time
+        if (k == 0) break;
+    }
+ 
+ // print the result
+  
+   for (int i=0 ; i < s.size() ; ++i){
+    if (s[i] != '#')
+        cout << s[i];
+   }
+   cout << endl;
+   
+    return 0;
+}
