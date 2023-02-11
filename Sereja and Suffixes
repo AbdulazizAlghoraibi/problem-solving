@@ -1,0 +1,46 @@
+//--------------------------------------------------------------------
+// by Abdulaziz Alghoribi
+// Sereja and Suffixes
+// at codeforces.com (368B)
+//--------------------------------------------------------------------
+
+#include <bits/stdc++.h>
+using namespace std;
+
+#define ll long long
+#define endl '\n'
+#define abdulaziz cin.tie(0)->sync_with_stdio(0);
+
+int main()
+{
+    abdulaziz
+    int n,q;
+    cin>>n>>q;
+    int arr[n],freq[100001]={0};
+
+    for(int i=0 ; i < n ; ++i){
+        cin>>arr[i];
+        freq[arr[i]] = i;
+    }
+
+    int oc[n];
+    for(int i=0; i < n; ++i){
+       if(freq[arr[i]]== i){
+            oc[i]=1;
+      }else oc[i]=0;
+    }
+
+    int prfx[n];
+    prfx[0] = oc[0];
+    for(int i=1 ; i < n ; ++i){
+        prfx[i] = prfx[i-1] + oc[i];
+    }
+    for(int i = 0 ; i < q ; ++i){
+       int l;
+       cin>>l;
+       l--;
+       if(l == 0) cout << prfx[n-1] <<endl;
+       else cout<< prfx[n-1] - prfx[l-1] <<endl;
+    }
+    return 0;
+}
