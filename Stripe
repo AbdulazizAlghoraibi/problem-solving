@@ -1,0 +1,34 @@
+//--------------------------------------------------------------------
+// by Abdulaziz Alghoribi
+// Stripe 
+// at codeforces.com (18c)
+//--------------------------------------------------------------------
+
+#include <bits/stdc++.h>
+using namespace std;
+
+#define ll long long
+#define endl '\n'
+#define abdulaziz cin.tie(0)->sync_with_stdio(0);
+
+
+int main()
+{
+    abdulaziz
+    int n;
+    cin>>n;
+    vector <int> prfx(n+1),arr(n+1);
+    prfx[0]={0};
+    for(int i=1; i< n+1;++i){
+        cin>>arr[i];
+        prfx[i] = prfx[i-1] + arr[i];
+    }
+
+    int qwe = 0;
+    for(int i = 1 ; i < n ; ++i){
+       if(prfx[n] - prfx[i] == prfx[i])
+        qwe++;
+    }
+cout<<qwe<<endl;
+    return 0;
+}
